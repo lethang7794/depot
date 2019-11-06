@@ -45,6 +45,7 @@ class ProductsController < ApplicationController
         format.html { redirect_to @product, notice: 'Product was successfully updated.' }
         format.json { render :show, status: :ok, location: @product }
       else
+        # puts @product.errors.full_messages
         format.html { render :edit }
         format.json { render json: @product.errors, status: :unprocessable_entity }
       end
