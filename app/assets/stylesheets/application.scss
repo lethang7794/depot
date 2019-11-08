@@ -12,3 +12,18 @@
  *= require_tree .
  *= require_self
 */
+
+header {
+  text-align: center;
+}
+
+nav.side_bar {
+  ul {
+    list-style: none;
+    li {
+      a:hover {
+        background-color: green
+      }
+    }
+  }
+}

@@ -5,7 +5,7 @@
 .products {
   margin: 0;
   padding: 0.5em;
-  
+
   a {
     padding: 0.354em 0.5em;
     border-radius: 0.354em;
@@ -33,9 +33,10 @@
     // fit the image.
     @media (min-width: 30em) {
       display: block;
-      text-align: center;
       img {
         height: 12em;
+        display: block;
+        margin: 0 auto;
         // width: auto
       }
     }
