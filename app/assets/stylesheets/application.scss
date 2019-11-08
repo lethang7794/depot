@@ -13,17 +13,23 @@
  *= require_self
 */
 
+body {}
+
 header {
   text-align: center;
 }
 
-nav.side_bar {
-  ul {
-    list-style: none;
-    li {
-      a:hover {
-        background-color: green
+section{
+  nav.side_bar {
+    ul {
+      list-style: none;
+      li {
+        a:hover {
+          background-color: green
+        }
       }
     }
   }
+
+  main {}
 }

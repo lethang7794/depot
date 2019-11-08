@@ -14,17 +14,20 @@
       <h1>This Is The Store Name</h1>
     </header>
 
-    <nav class="side_bar">
-      <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/questions">Questions</a></li>
-        <li><a href="/news">News</a></li>
-        <li><a href="/contact">Contact</a></li>
-      </ul>
-    </nav>
+    <section>
+      <nav class="side_bar">
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/questions">Questions</a></li>
+          <li><a href="/news">News</a></li>
+          <li><a href="/contact">Contact</a></li>
+        </ul>
+      </nav>
 
-    <main class='<%= controller.controller_name %>'>
-      <%= yield %>
-    </main>
+      <main class='<%= controller.controller_name %>'>
+        <%= yield %>
+      </main>
+    </section>
+
   </body>
 </html>
