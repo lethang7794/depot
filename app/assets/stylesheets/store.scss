@@ -3,11 +3,13 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .store {
-  max-width: 80em;
-  .catalog {
+  // max-width: 80em;
+  ul.catalog {
+    border-top: solid 0.2em;
+    padding-left: 0;
     li {
-      list-style: none;
-
+      // list-style: none;
+      border-bottom: solid thin black;
       display: block;
 
       &::after {
@@ -29,6 +31,29 @@
     }
   }
 }
+
+form, div {
+  display: inline;
+}
+
+.price {
+  font-size: 1.414em;
+}
+
+input[type="submit"] {
+  background-color: #282;
+  color: white;
+  border: solid thin #141;
+  border-radius: 0.354em;
+  padding: 0.354em 1em;
+
+}
+
+input[type="submit"]:hover {
+  background-color: #141;
+}
+
+
 
 
 // .store {

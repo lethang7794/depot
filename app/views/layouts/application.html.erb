@@ -10,7 +10,8 @@
   </head>
 
   <body>
-    <header>
+    <header class="banner">
+      <%= image_tag 'online_store.svg', alt: 'The store logo'  %>
       <h1>This Is The Store Name</h1>
       <h1><%= @page_title %></h1>
     </header>
@@ -19,16 +20,20 @@
       <nav class="side_bar">
         <ul>
           <li><a href="/">Home</a></li>
-          <li><a href="/questions">Questions</a></li>
-          <li><a href="/news">News</a></li>
-          <li><a href="/contact">Contact</a></li>
+          <li><a href="/">Questions</a></li>
+          <li><a href="/">News</a></li>
+          <li><a href="/">Contact</a></li>
         </ul>
 
-        <div class="date-time">
-          Time From Store Controller<%= @time %>
+        <div id="test-time">
+          Store Controller:
+          <br>
+          <%= @time %>
         </div>
-        <div class="date-time">
-          Time From Application Controller<%= ApplicationController.time %>
+        <div id="test-time">
+          App Controller:
+          <br>
+          <%= ApplicationController.time %>
         </div>
 
       </nav>

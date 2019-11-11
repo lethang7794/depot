@@ -16,29 +16,87 @@
 
 // Add border to all element to debug
 * {
-  border: dotted 0.1em;
+  // border: dotted 0.1em;
 }
 
-body {}
+body {
+  padding: 0;
+  margin: 0;
+}
 
 header {
   text-align: center;
+  background-color: #85C1E9;
+  // margin: 0;
+  h1 {
+    display: none;
+  }
+
+  img {
+    width: 10em;
+  }
 }
 
+
 section{
+  margin: 0;
+  padding: 0;
+
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  @media (min-width: 600px) {
+    flex-direction: row;
+  }
 
   nav.side_bar {
+    text-align: center;
+
+    @media (min-width: 600px) {
+      text-align: right;
+    }
+
+    background-color: #21618C;
     ul {
+      padding: 0.5em;
+      margin: 0;
       list-style: none;
       li {
-        a:hover {
-          background-color: green
+        color: white;
+        text-transform: uppercase;
+
+        a:link {
+          color: white;
         }
+
+        a:hover {
+          background-color: yellow;
+          color: black;
+        }
+
+        a:visited {
+          color: inherit;
+        }
+
+
       }
     }
   }
 
-  main {}
+  main {
+    padding: 0.5em;
+  }
+}
+
+#test-time {
+  display: none;
+}
+
+#notice {
+  background-color: #ffb;
+  color: #882;
+  border: solid 0.2em #882;
+  border-radius: 0.5em;
+  padding: 1em 1.414em;
+  text-align: center;
+  font-weight: bold;
 }

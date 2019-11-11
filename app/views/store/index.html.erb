@@ -1,3 +1,10 @@
+<% if session[:counter] > 3 %>
+<h1>Hey, you have been visiting our store <%= pluralize(session[:counter], "time") %>. </h1>
+  <p>We know you wanna our book very much.</p>
+  <p>So we have a coupon for you.</p>
+  <p>Let's buy some book.</p>
+<% end %>
+
 <h1>List to show to Buyer</h1>
 
 <ul class="catalog">
@@ -12,6 +19,7 @@
           </p>
           <div class="price">
             <%= number_to_currency(product.price) %>
+            <%= button_to 'Add to Cart', line_items_path(product_id: product) %>
           </div>
         </li>
       <% end %>
