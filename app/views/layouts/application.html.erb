@@ -12,6 +12,7 @@
   <body>
     <header>
       <h1>This Is The Store Name</h1>
+      <h1><%= @page_title %></h1>
     </header>
 
     <section>
@@ -22,6 +23,14 @@
           <li><a href="/news">News</a></li>
           <li><a href="/contact">Contact</a></li>
         </ul>
+
+        <div class="date-time">
+          Time From Store Controller<%= @time %>
+        </div>
+        <div class="date-time">
+          Time From Application Controller<%= ApplicationController.time %>
+        </div>
+
       </nav>
 
       <main class='<%= controller.controller_name %>'>

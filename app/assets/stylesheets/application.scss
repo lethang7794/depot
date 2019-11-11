@@ -13,6 +13,12 @@
  *= require_self
 */
 
+
+// Add border to all element to debug
+* {
+  border: dotted 0.1em;
+}
+
 body {}
 
 header {
@@ -20,6 +26,9 @@ header {
 }
 
 section{
+  display: flex;
+  flex-direction: row;
+
   nav.side_bar {
     ul {
       list-style: none;
