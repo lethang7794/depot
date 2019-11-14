@@ -31,7 +31,8 @@ class LineItemsControllerTest < ActionDispatch::IntegrationTest
     follow_redirect!
 
     assert_select 'h2', 'This is your cart'
-    assert_select 'li', 'Programming Ruby 1.9'
+    # assert_select 'li', '1 \u00D7 Programming Ruby 1.9' #String inside single quote, \u00D7 is not subtitute to the sign
+    assert_select 'td', "Programming Ruby 1.9"
   end
 
 
@@ -46,7 +47,8 @@ class LineItemsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update line_item" do
-    patch line_item_url(@line_item), params: { line_item: { cart_id: @line_item.cart_id, product_id: @line_item.product_id } }
+    # patch line_item_url(@line_item), params: { line_item: { cart_id: @line_item.cart_id, product_id: @line_item.product_id } }
+    patch line_item_url(@line_item), params: { line_item: { product_id: @line_item.product_id } }
     assert_redirected_to line_item_url(@line_item)
   end
 

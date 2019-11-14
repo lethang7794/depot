@@ -87,6 +87,19 @@ section{
   }
 }
 
+input[type="submit"] {
+  background-color: #282;
+  color: white;
+  border: solid thin #141;
+  border-radius: 0.354em;
+  padding: 0.354em 1em;
+
+}
+
+input[type="submit"]:hover {
+  background-color: #141;
+}
+
 #test-time {
   display: none;
 }

@@ -3,11 +3,31 @@
 <% end %>
 
 <h2>This is your cart</h2>
-<ul>
+<!-- <ul>
   <% @cart.line_items.each do |item| %>
-    <li><%= item.product.title %></li>
+    <li><%= item.quantity %>&nbsp;&times<%= item.product.title %></li>
   <% end %>
-</ul>
+</ul> -->
+
+<table>
+  <% @cart.line_items.each do |item| %>
+    <tr>
+      <td><%= item.quantity %>&nbsp;&times</td>
+      <td><%= item.product.title %></td>
+      <td class="price"><%= number_to_currency(item.total_price) %></td>
+    </tr>
+  <% end %>
+  <tfoot>
+    <tr>
+      <th colspan="2">Total:</th>
+      <th class="price"><%= number_to_currency(@cart.total_price) %></th>
+    </tr>
+  </tfoot>
+</table>
+
+<p>
+  <%= button_to 'Delete this cart - Empty cart', @cart, method: :delete, data: {confirm: 'Are you sure?'} %>
+</p>
 
 
 <%= link_to 'Edit', edit_cart_path(@cart) %> |
