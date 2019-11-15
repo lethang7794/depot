@@ -68,13 +68,13 @@ class CartsController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    # def set_cart
-    #   @cart = Cart.find(params[:id])
-    # end
-
     def set_cart
-      @cart = Cart.find(session[:cart_id])
+      @cart = Cart.find(params[:id])
     end
+
+    # def set_cart
+    #   @cart = Cart.find(session[:cart_id])
+    # end
 
     # Never trust parameters from the scary internet, only allow the white list through.store_index_path
     def cart_params

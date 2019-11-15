@@ -27,7 +27,7 @@
       <td>
         <%= button_to 'Delete this product', item, method: :delete, data: {confirm: 'Are you sure to delete this product?'} %>
       </td>
-      <td><%= item.quantity %></td>
+      <td class="quantity"><%= item.quantity %></td>
       <td class="quantity">
         <form action="/line_items" method="patch">
             <select name="quantity" id="">
