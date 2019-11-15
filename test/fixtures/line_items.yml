@@ -6,4 +6,8 @@ one:
 
 two:
   product: two
-  cart: two
+  cart: one
+
+three:
+  product: ruby
+  cart: one

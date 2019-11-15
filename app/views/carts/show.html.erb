@@ -10,16 +10,47 @@
 </ul> -->
 
 <table>
+  <thead>
+    <tr>
+      <td></td>
+      <td>Quantity</td>
+      <td></td>
+      <td></td>
+      <td>Product Title</td>
+      <td>Price<br>(now)</td>
+      <td>Price<br>(when added)</td>
+      <td>Total</td>
+    </tr>
+  </thead>
   <% @cart.line_items.each do |item| %>
     <tr>
-      <td><%= item.quantity %>&nbsp;&times</td>
+      <td>
+        <%= button_to 'Delete this product', item, method: :delete, data: {confirm: 'Are you sure to delete this product?'} %>
+      </td>
+      <td><%= item.quantity %></td>
+      <td class="quantity">
+        <form action="/line_items" method="patch">
+            <select name="quantity" id="">
+                <% (0..10).each do |option| %>
+                    <% if option == item.quantity %>
+                      <option value="<%= option %>" selected><%= option %></option>
+                    <% else %>
+                      <option value="<%= option %>"><%= option %></option>
+                    <% end %>
+                <% end %>
+            </select>
+        </form>
+      </td>
+      <td>&times</td>
       <td><%= item.product.title %></td>
+      <td><%= item.price %></td>
+      <td><%= item.product.price %></td>
       <td class="price"><%= number_to_currency(item.total_price) %></td>
     </tr>
   <% end %>
   <tfoot>
     <tr>
-      <th colspan="2">Total:</th>
+      <th colspan="7">Total:</th>
       <th class="price"><%= number_to_currency(@cart.total_price) %></th>
     </tr>
   </tfoot>

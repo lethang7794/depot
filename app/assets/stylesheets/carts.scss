@@ -4,11 +4,18 @@
 
 .carts {
   table {
+    * {
+      border: dashed thin;
+    }
     tr {
       .price {
         text-align: right;
         font-weight: bold;
         padding-right: 0;
+      }
+
+      .quantity {
+        text-align: center;
       }
 
       td {
@@ -25,5 +32,12 @@
         padding-top: 1em;
       }
     }
+  }
+
+  input[type="submit"] {
+    background-color: red;
+  }
+  input[type="submit"]:hover {
+    background-color: #AF0000
   }
 }

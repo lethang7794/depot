@@ -35,6 +35,29 @@ class LineItemsControllerTest < ActionDispatch::IntegrationTest
     assert_select 'td', "Programming Ruby 1.9"
   end
 
+  test "when create 2 unique product and 1 duplicated products" do
+    assert_difference('LineItem.count') do
+      post line_items_url, params: { product_id: products(:one).id }
+    end
+    assert_difference('LineItem.count') do
+      post line_items_url, params: { product_id: products(:two).id }
+    end
+    assert_difference('LineItem.count') do
+      post line_items_url, params: { product_id: products(:ruby).id }
+    end
+    assert_no_difference('LineItem.count') do
+      post line_items_url, params: { product_id: products(:ruby).id }
+    end
+
+    follow_redirect!
+
+    assert_select 'td', 'MyString1'
+    assert_select 'td', 'MyString2'
+    assert_select 'td', 'Programming Ruby 1.9'
+    assert_select 'td.quantity', '1'
+    assert_select 'td.quantity', '2'
+  end
+
 
   test "should show line_item" do
     get line_item_url(@line_item)
