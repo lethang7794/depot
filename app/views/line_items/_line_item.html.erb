@@ -1,0 +1,38 @@
+<!--
+<tr>
+  <td>
+    <%= button_to 'Delete this product',line_item, method: :delete, data: {confirm: 'Are you sure to delete this product?'} %>
+  </td>
+  <td class="quantity"><%=line_item.quantity %></td>
+  <td class="quantity">
+    <form action="/line_items" method="patch">
+        <select name="quantity" id="">
+            <% (0..10).each do |option| %>
+                <% if option ==line_item.quantity %>
+                  <option value="<%= option %>" selected><%= option %></option>
+                <% else %>
+                  <option value="<%= option %>"><%= option %></option>
+                <% end %>
+            <% end %>
+        </select>
+    </form>
+  </td>
+  <td>&times</td>
+  <td><%=line_item.product.title %></td>
+  <td><%=line_item.price %></td>
+  <td><%=line_item.product.price %></td>
+  <td class="price"><%= number_to_currency(line_item.total_price) %></td>
+</tr>
+ -->
+
+
+<% if line_item == @current_line_item %>
+  <tr class="highlight-line-item-class">
+<% else %>
+  <tr>
+<% end %>
+    <td class="quantity"><%= line_item.quantity %></td>
+    <td class="quantity">&times</td>
+    <td class="title"><%= line_item.product.title %></td>
+    <td class="price"><%= number_to_currency(line_item.total_price) %></td>
+  </tr>

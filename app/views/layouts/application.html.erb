@@ -11,18 +11,27 @@
 
   <body>
     <header class="banner">
-      <%= image_tag 'online_store.svg', alt: 'The store logo'  %>
+      <a href="/">
+        <%= image_tag 'online_store.svg', alt: 'The store logo'  %>
+      </a>
       <h1>This Is The Store Name</h1>
       <h1><%= @page_title %></h1>
     </header>
 
     <section>
       <nav class="side_bar">
+
+        <% if @cart %>
+          <div class="carts" id=side_cart>
+            <%= render @cart %>
+          </div>
+        <% end %>
+
         <ul>
           <li><a href="/">Home</a></li>
           <li><a href="/products">Products</a></li>
           <li><a href="/carts">Carts</a></li>
-          <li><a href="/">Contact</a></li>
+          <li><a href="/line_items">Line Items</a></li>
         </ul>
 
         <div id="test-time">

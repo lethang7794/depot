@@ -17,7 +17,7 @@ class CartsController < ApplicationController
   end
 
   # GET /carts/new
-  def new
+  def new    
     @cart = Cart.new
   end
 
@@ -57,12 +57,28 @@ class CartsController < ApplicationController
 
   # DELETE /carts/1
   # DELETE /carts/1.json
+  # def destroy
+  #   @cart.destroy if @cart.id == session[:cart_id]
+  #   session[:cart_id] = nil
+  #   respond_to do |format|
+  #     format.html { redirect_to store_index_url, notice: 'Your cart is empty. Let\'s add some other products.' }
+  #     format.json { head :no_content }
+  #   end
+  # end
   def destroy
-    @cart.destroy if @cart.id == session[:cart_id]
-    session[:cart_id] = nil
-    respond_to do |format|
-      format.html { redirect_to store_index_url, notice: 'Your cart is empty. Let\'s add some other products.' }
-      format.json { head :no_content }
+    if @cart.id == session[:cart_id]
+      if @cart.destroy
+        session[:cart_id] = nil
+        respond_to do |format|
+          format.html { redirect_to store_index_url, notice: 'Your cart is empty. Let\'s add some other products.' }
+          format.json { head :no_content }
+        end
+      else
+      end
+    else
+      respond_to do |format|
+          format.html { redirect_to store_index_url, notice: "Only your cart can be deleted" }
+      end
     end
   end
 

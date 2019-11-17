@@ -55,7 +55,7 @@ section{
       text-align: right;
     }
 
-    background-color: #21618C;
+    background-color: #428bca;
     ul {
       padding: 0.5em;
       margin: 0;
@@ -112,4 +112,14 @@ input[type="submit"]:hover {
   padding: 1em 1.414em;
   text-align: center;
   font-weight: bold;
+}
+
+#side_cart {
+  h2 {
+    text-align: center;
+  }
+  background-color: white;
+  border-radius: 1em;
+  margin: 0.5em;
+  padding: 1em;
 }
