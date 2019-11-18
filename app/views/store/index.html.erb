@@ -2,11 +2,14 @@
   <p id="notice"><%= notice %></p>
 <% end %>
 
-<% if session[:counter] > 3 %>
-<h1>Hey, you have been visiting our store <%= pluralize(session[:counter], "time") %>. </h1>
-  <p>We know you wanna our book very much.</p>
-  <p>So we have a coupon for you.</p>
-  <p>Let's buy some book.</p>
+# too much logic in a view!!!!!!!!
+<% unless session[:counter].nil? %>
+  <% if session[:counter] > 3 %>
+  <h1>Hey, you have been visiting our store <%= pluralize(session[:counter], "time") %>. </h1>
+    <p>We know you wanna our book very much.</p>
+    <p>So we have a coupon for you.</p>
+    <p>Let's buy some book.</p>
+  <% end %>
 <% end %>
 
 <h1>List to show to Buyer</h1>
