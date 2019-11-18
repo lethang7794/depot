@@ -23,7 +23,7 @@
 
         <% if @cart %>
           <div class="carts" id=side_cart>
-            <%= render @cart %>
+            <%= render_if @cart && @cart.line_items.any?, @cart %>
           </div>
         <% end %>
 
