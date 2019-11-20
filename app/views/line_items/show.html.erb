@@ -1,14 +1,29 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Product:</strong>
+  <strong>Product Instance ID:</strong>
   <%= @line_item.product %>
 </p>
 
 <p>
-  <strong>Cart:</strong>
+  <strong>Cart Intance ID:</strong>
   <%= @line_item.cart %>
 </p>
+
+<table>
+  <tr>
+    <th>LineItem</th>
+    <th>Product</th>
+    <th>Quantity</th>
+    <th>Cart</th>
+  </tr>
+  <tr>
+    <td><%= @line_item.id %></td>
+    <td><%= @line_item.product.id %></td>
+    <td><%= @line_item.quantity %></td>
+    <td><%= @line_item.cart.id %></td>
+  </tr>
+</table>
 
 <%= link_to 'Edit', edit_line_item_path(@line_item) %> |
 <%= link_to 'Back', line_items_path %>

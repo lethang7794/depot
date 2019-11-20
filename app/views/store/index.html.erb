@@ -2,7 +2,7 @@
   <p id="notice"><%= notice %></p>
 <% end %>
 
-# too much logic in a view!!!!!!!!
+<!-- too much logic in a view!!!!!!!! -->
 <% unless session[:counter].nil? %>
   <% if session[:counter] > 3 %>
   <h1>Hey, you have been visiting our store <%= pluralize(session[:counter], "time") %>. </h1>
@@ -19,7 +19,9 @@
     <% @products.each do |product| %>
       <% cache product do %>
         <li>
-          <%= image_tag(product.image_url) %>
+          <%= form_with url: line_items_path(product_id: product), method: :post, class: "", remote: true %>
+            <%= button_tag image_tag(product.image_url), { style: "float: left;" }%>
+
           <h2><%= product.title %></h2>
           <p>
             <%= sanitize(product.description) %>

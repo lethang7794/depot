@@ -17,7 +17,7 @@ class CartsController < ApplicationController
   end
 
   # GET /carts/new
-  def new    
+  def new
     @cart = Cart.new
   end
 
@@ -71,6 +71,7 @@ class CartsController < ApplicationController
         session[:cart_id] = nil
         respond_to do |format|
           format.html { redirect_to store_index_url, notice: 'Your cart is empty. Let\'s add some other products.' }
+          format.js { @current_cart = @cart }
           format.json { head :no_content }
         end
       else

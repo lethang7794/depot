@@ -20,10 +20,6 @@
 
       img {
         width: 10em;
-        float: left;
-        box-shadow: 0.176em 0.176em 0.354em 0px rgba(0,0,0,0.75);
-        padding: 1em;
-        margin: 1em;
       }
       .price {
         font-size: 1.414em;
@@ -33,5 +29,25 @@
 
   form, div {
     display: inline;
+  }
+
+  button {
+    background-color: white;
+    box-shadow: 0.176em 0.176em 0.354em 0px rgba(0,0,0,0.75);
+    margin: 1em;
+    border: none;
+  }
+
+  input[type="submit"] {
+    background-color: #282;
+    color: white;
+    border: solid thin #141;
+    border-radius: 0.354em;
+    padding: 0.354em 1em;
+
+  }
+
+  input[type="submit"]:hover {
+    background-color: #141;
   }
 }

@@ -21,8 +21,12 @@
     <section>
       <nav class="side_bar">
 
-        <% if @cart %>
-          <div class="carts" id=side_cart>
+        <% if @cart && @cart.line_items.any? %>
+          <div class="carts" id="side_cart">
+            <%= render_if @cart && @cart.line_items.any?, @cart %>
+          </div>
+        <% elsif @cart %>
+          <div class="carts" id="side_cart_first_empty">
             <%= render_if @cart && @cart.line_items.any?, @cart %>
           </div>
         <% end %>
@@ -31,7 +35,7 @@
           <li><a href="/">Home</a></li>
           <li><a href="/products">Products</a></li>
           <li><a href="/carts">Carts</a></li>
-          <li><a href="/line_items">Line Items</a></li>
+          <li><a href="/line_items">Line&nbspItems</a></li>
         </ul>
 
         <div id="test-time">
