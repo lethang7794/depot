@@ -18,7 +18,7 @@
       <h1><%= @page_title %></h1>
     </header>
 
-    <section>
+    <section class="content">
       <nav class="side_bar">
 
         <% if @cart && @cart.line_items.any? %>
@@ -36,6 +36,7 @@
           <li><a href="/products">Products</a></li>
           <li><a href="/carts">Carts</a></li>
           <li><a href="/line_items">Line&nbspItems</a></li>
+          <li><a href="/orders">Orders</a></li>
         </ul>
 
         <div id="test-time">

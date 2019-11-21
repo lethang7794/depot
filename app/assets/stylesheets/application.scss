@@ -38,7 +38,7 @@ header {
 }
 
 
-section{
+section.content {
   margin: 0;
   padding: 0;
 
@@ -123,25 +123,29 @@ section{
   margin: 0.5em;
   padding: 1em;
 
-  input[type="submit"].delete-line-item-button {
+  input[type="submit"].delete-line-item-button,
+  input[type="submit"].delete_button {
     background-color: red;
     color: white;
     border: solid thin #141;
     border-radius: 0.354em;
     padding: 0.354em 1em;
   }
-  input[type="submit"]:hover.delete-line-item-button {
+  input[type="submit"]:hover.delete-line-item-button,
+  input[type="submit"]:hover.delete_button {
     background-color: #AF0000
   }
 
-  input[type="submit"].update-line-item-button {
+  input[type="submit"].update-line-item-button,
+  input[type="submit"].checkout_button {
     background-color: green;
     color: white;
     border: solid thin #141;
     border-radius: 0.354em;
     padding: 0.354em 1em;
   }
-  input[type="submit"]:hover.update-line-item-button {
+  input[type="submit"]:hover.update-line-item-button,
+  input[type="submit"]:hover.checkout_button {
     background-color: #141
   }
 }
