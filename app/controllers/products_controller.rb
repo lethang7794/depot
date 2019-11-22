@@ -48,7 +48,7 @@ class ProductsController < ApplicationController
         #Update the product with ActionCable
         @products = Product.all
         ActionCable.server.broadcast 'products', html: render_to_string('/store/index', layout: false)
-        
+
       else
         # puts @product.errors.full_messages
         format.html { render :edit }
@@ -67,6 +67,20 @@ class ProductsController < ApplicationController
     end
   end
 
+  def who_bought
+    @product = Product.find(params[:id])
+    @lastest_order = @product.orders.order(:updated_at).last
+
+    if stale?(@lastest_order)
+      respond_to do |format|
+        format.atom
+
+        # format.html
+        # format.json { render json: @resource }
+      end
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_product
@@ -77,4 +91,7 @@ class ProductsController < ApplicationController
     def product_params
       params.require(:product).permit(:title, :description, :image_url, :price)
     end
+
+
+
 end
