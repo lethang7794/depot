@@ -1,3 +1,4 @@
+
 class OrdersController < ApplicationController
 
   include CurrentCart
@@ -39,7 +40,7 @@ class OrdersController < ApplicationController
         Cart.destroy(session[:cart_id])
         session[:cart_id] = nil
 
-        format.html { redirect_to store_index_path, notice: 'Order was successfully created. - Thank you for your order, we will ship it ASAP.' }
+        format.html { redirect_to store_index_path, notice: 'Order was successfully created - Thank you for your order, we will ship it ASAP.' }
 
         format.json { render :show, status: :created, location: @order }
       else
@@ -87,6 +88,17 @@ class OrdersController < ApplicationController
     def ensure_cart_is_not_empty
       if @cart.line_items.empty?
         redirect_to store_index_path, notice: "Your cart is empty!"
+      end
+    end
+
+  private
+    def pay_type_params
+      if order_params[:pay_type] == 'Credit Card'
+        params.require(:order).permit(:credit_card_number, :expiration_date)
+      elsif order_params[:pay_type] == 'Check'
+        params.require(:order).permit(:routing_number, :accouting_number)
+      else
+        {}
       end
     end
 
