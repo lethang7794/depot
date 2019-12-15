@@ -6,11 +6,15 @@ class CheckPayType extends React.Component {
       <div>
         <div>
           <label htmlFor="">Routing Number</label>
-          <input type="number"/>
+          <input  type="number"
+                  name="order[routing_number]"
+                  id="order_routing_number"  />
         </div>
         <div>
           <label htmlFor="">Accounting Number</label>
-          <input type="number"/>
+          <input  type="number"
+                  name="order[accouting_number]"
+                  id="order_accouting_number"  />
         </div>
       </div>
     );

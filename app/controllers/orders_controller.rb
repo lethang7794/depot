@@ -94,9 +94,11 @@ class OrdersController < ApplicationController
   private
     def pay_type_params
       if order_params[:pay_type] == 'Credit Card'
-        params.require(:order).permit(:credit_card_number, :expiration_date)
+        params.require(:order).permit(:cardholder_name, :credit_card_number, :expiration_date, :cvv)
       elsif order_params[:pay_type] == 'Check'
         params.require(:order).permit(:routing_number, :accouting_number)
+      elsif order_params[:pay_type] == 'Cash'
+        {}
       else
         {}
       end
