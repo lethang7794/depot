@@ -1,3 +1,13 @@
 Order#received
 
 <%= @greeting %>, find me in app/views/order_mailer/received.text.erb
+
+
+Dear <%= @order.name %>
+
+Thanks you for your recent order with Depot.
+
+You've ordered the following items:
+<%= render @order.line_items %>.
+
+We'll send you another email when your order's shipped.
