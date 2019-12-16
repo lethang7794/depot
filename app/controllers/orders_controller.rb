@@ -1,4 +1,3 @@
-
 class OrdersController < ApplicationController
 
   include CurrentCart
