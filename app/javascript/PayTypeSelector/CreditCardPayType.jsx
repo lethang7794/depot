@@ -13,8 +13,8 @@ class CreditCardPayType extends React.Component {
         <div>
           <label>Credit/Debit Card Number</label>
           <input  type="number"
-                  name="order[credit_card_number]"
-                  id="order_credit_cart_number"  />
+                  name="order[card_number]"
+                  id="order_cart_number"  />
         </div>
         <div>
           <label>Expiration Date</label>

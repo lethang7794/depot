@@ -40,7 +40,8 @@ class OrdersController < ApplicationController
         format.html { redirect_to store_index_path, notice: 'Order was successfully created - Thank you for your order, we will ship it ASAP.' }
         format.json { render :show, status: :created, location: @order }
 
-        OrderMailer.received(@order).deliver_later
+        @order.charge!(pay_type_params)
+        # OrderMailer.received(@order).deliver_later
       else
         format.html { render :new }
         format.json { render json: @order.errors, status: :unprocessable_entity }
