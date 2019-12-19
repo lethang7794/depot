@@ -30,12 +30,12 @@ class CartsTest < ApplicationSystemTestCase
     click_on "Back"
   end
 
-  test "destroying a Cart" do
-    visit carts_url
+  test "destroying own Cart" do
+    visit store_index_url
+    click_on "Add to Cart", match: :first
     page.accept_confirm do
-      click_on "Destroy", match: :first
+      click_on "Delete this cart - Empty cart"
     end
-
-    assert_text "Cart was successfully destroyed"
+    page.has_css?('side_cart_first_empty', style: "display: none;")
   end
 end
