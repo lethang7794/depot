@@ -10,18 +10,22 @@ class OrdersTest < ApplicationSystemTestCase
     assert_selector "h1", text: "Orders"
   end
 
-  # test "creating a Order" do
-  #   visit orders_url
-  #   click_on "New Order"
-  #
-  #   fill_in "order_address", with: @order.address
-  #   fill_in "order_email", with: @order.email
-  #   fill_in "order_name", with: @order.name
-  #   click_on "Create Order"
-  #
-  #   assert_text "Order was successfully created"
-  #   click_on "Back"
-  # end
+  test "creating a Order with Cash" do
+    visit store_index_url
+    click_on "Add to Cart", match: :first
+    click_on "Check out"
+
+    fill_in "order_address", with: @order.address
+    fill_in "order_email", with: @order.email
+    fill_in "order_name", with: @order.name
+
+    assert_selector "select#order_pay_type", text: "Select a payment method"
+    select 'Cash', from: "order_pay_type"
+    assert_selector "select#order_pay_type", text: "Cash"
+
+    click_on "Create Order"
+    assert_text "Order was successfully created - Thank you for your order, we will ship it ASAP."
+  end
 
   test "updating a Order" do
     # TODO: pay_type
