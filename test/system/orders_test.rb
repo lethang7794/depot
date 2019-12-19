@@ -27,6 +27,28 @@ class OrdersTest < ApplicationSystemTestCase
     assert_text "Order was successfully created - Thank you for your order, we will ship it ASAP."
   end
 
+  test "check payment input fields by React" do
+    visit store_index_url
+    click_on "Add to Cart", match: :first
+    click_on "Check out"
+    
+    assert_no_selector "input#order_cardholder_name"
+    assert_no_selector "input#order_card_number"
+    assert_no_selector "#order_expiration_date"
+    assert_no_selector "#order_cvv"
+    select 'Credit Card', from: "order_pay_type"
+    assert_selector "#order_cardholder_name"
+    assert_selector "#order_card_number"
+    assert_selector "input#order_expiration_date"
+    assert_selector "input#order_cvv"
+
+    assert_no_selector "#order_routing_number"
+    assert_no_selector "#order_accouting_number"
+    select 'Check', from: "order_pay_type"
+    assert_selector "#order_routing_number"
+    assert_selector "#order_accouting_number"
+  end
+
   test "updating a Order" do
     # TODO: pay_type
     visit orders_url
