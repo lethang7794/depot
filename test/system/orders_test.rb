@@ -1,6 +1,8 @@
 require "application_system_test_case"
 
 class OrdersTest < ApplicationSystemTestCase
+  include ActiveJob::TestHelper
+
   setup do
     @order = orders(:one)
   end
@@ -27,11 +29,55 @@ class OrdersTest < ApplicationSystemTestCase
     assert_text "Order was successfully created - Thank you for your order, we will ship it ASAP."
   end
 
+  test "creating a Order with Credit Card" do
+    LineItem.delete_all
+    Order.delete_all
+
+    visit store_index_url
+    click_on "Add to Cart", match: :first
+    click_on "Check out"
+
+    fill_in "order_address", with: @order.address
+    fill_in "order_email", with: @order.email
+    fill_in "order_name", with: @order.name
+
+    assert_selector "select#order_pay_type", text: "Select a payment method"
+    select 'Credit Card', from: "order_pay_type"
+    assert_selector "select#order_pay_type", text: "Credit Card"
+
+    fill_in "order_card_number", with: "1111222233334444"
+    fill_in "order_cardholder_name", with: "Le Quang Thang"
+    fill_in "order_cvv", with: "123"
+    fill_in "order_expiration_date", with: "12/20"
+
+    perform_enqueued_jobs do
+      click_on "Create Order"
+    end
+
+    assert_text "Order was successfully created - Thank you for your order, we will ship it ASAP."
+
+    orders = Order.all
+    order = orders.first
+
+    assert_equal 1, orders.size
+    assert_equal 1, order.line_items.size
+
+    assert_equal "John",            order.name
+    assert_equal "john@gmail.com",  order.email
+    assert_equal "John's address",  order.address
+    assert_equal "Credit Card",     order.pay_type
+
+    mail = ActionMailer::Base.deliveries.last
+    assert_equal ["john@gmail.com"], mail.to
+    assert_equal ["customer@depot.com"], mail.from
+    assert_equal "Depot Store - Order Confirmation", mail.subject
+  end
+
   test "check payment input fields by React" do
     visit store_index_url
     click_on "Add to Cart", match: :first
     click_on "Check out"
-    
+
     assert_no_selector "input#order_cardholder_name"
     assert_no_selector "input#order_card_number"
     assert_no_selector "#order_expiration_date"

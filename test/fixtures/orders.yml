@@ -3,7 +3,7 @@
 one:
   name: John
   email: john@gmail.com
-  address: MyText
+  address: John's address
   pay_type: Cash
 
 two:
