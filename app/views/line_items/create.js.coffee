@@ -11,6 +11,11 @@ if cart
 
 cart.innerHTML = "<%= j render(@cart) %>"
 
+if cart_first_empty
+  window.location.href = '#side_cart_first_empty'
+else
+  window.location.href = '#side_cart'
+
 notice = document.getElementById("notice")
 if notice
   notice.style.display = "none"
