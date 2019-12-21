@@ -27,7 +27,7 @@ Product.create!(
       </p>
     },
   image_url: 'rails51.jpg',
-  price: 59.95
+  price: 0.01,
 )
 
 Product.create!(
@@ -36,7 +36,7 @@ Product.create!(
     %{The Pickaxe book, named for the tool on the cover, is the definitive reference to Ruby, a highly-regarded, fully object-oriented programming language. This Second Edition has more than 200 pages of new content, and substantial enhancements to the original, covering all the new and improved language features of Ruby 1.8 and standard library modules.
     },
   image_url: 'ruby.jpg',
-  price: 12.34,
+  price: 10,
 )
 
 Product.create!(
@@ -45,5 +45,5 @@ Product.create!(
     %{Used by sites as varied as Twitter, GitHub, Disney, and Airbnb, Ruby on Rails is one of the most popular frameworks for developing web applications, but it can be challenging to learn and use. Whether you’re new to web development or new only to Rails, Ruby on Rails™ Tutorial, Fourth Edition, is the solution.
     },
   image_url: 'rails_tutorial.jpg',
-  price: 45.67,
+  price: 100,
 )
