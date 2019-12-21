@@ -153,3 +153,16 @@ section.content {
 #side_cart_first_empty {
   display: none;
 }
+
+.depot_form {
+  input[type="submit"] {
+    background-color: #1074e7;
+    color: white;
+    border: solid thin #141;
+    border-radius: 0.354em;
+    padding: 0.354em 1em;
+  }
+  input[type="submit"]:hover {
+    background-color: #0366d6;
+  }
+}
