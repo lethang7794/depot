@@ -1,2 +1,28 @@
-<h1>Sessions#new</h1>
-<p>Find me in app/views/sessions/new.html.erb</p>
+<section class="depot_form">
+  <% if flash[:alert] %>
+    <p id="notice"><%= flash[:alert] %></p>
+  <% end %>
+
+  <%= form_tag do %>
+    <div class="field">
+      <%= label_tag :name, "Username:" %>
+      <%= text_field_tag(:name,
+                          params[:name],
+                          placeholder: "Enter your username here",
+      ) %>
+    </div>
+
+    <div class="field">
+      <%= label_tag :password, "Password:" %>
+      <%= password_field_tag(:password,
+                          params[:password],
+                          placeholder: "Enter your password here",
+      ) %>
+    </div>
+
+    <div class="actions">
+      <%= submit_tag "Login" %>
+    </div>
+
+  <% end %>
+</section>
