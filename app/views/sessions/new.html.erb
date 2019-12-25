@@ -7,8 +7,9 @@
     <div class="field">
       <%= label_tag :name, "Username:" %>
       <%= text_field_tag(:name,
-                          params[:name],
+                          session[:name],
                           placeholder: "Enter your username here",
+                          autofocus: true
       ) %>
     </div>
 
