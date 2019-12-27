@@ -6,11 +6,13 @@ class CartsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should get index" do
+    login_as users(:one)
     get carts_url
     assert_response :success
   end
 
   test "should get new" do
+    login_as users(:one)
     get new_cart_url
     assert_response :success
   end
@@ -24,11 +26,13 @@ class CartsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should show cart" do
+    login_as users(:one)
     get cart_url(@cart)
     assert_response :success
   end
 
   test "should get edit" do
+    login_as users(:one)
     get edit_cart_url(@cart)
     assert_response :success
   end
