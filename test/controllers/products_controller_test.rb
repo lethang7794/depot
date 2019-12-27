@@ -4,6 +4,7 @@ class ProductsControllerTest < ActionDispatch::IntegrationTest
   setup do
     @product = products(:one)
     @title = "New title #{rand(1000)}"
+    login_as users(:one)
   end
 
   test "should get index" do
