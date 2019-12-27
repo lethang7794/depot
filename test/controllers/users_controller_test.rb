@@ -4,6 +4,7 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
   setup do
     @user = users(:one)
     @name = "User #{rand(1000)}"
+    login_as users(:one)
   end
 
   test "should get index" do
