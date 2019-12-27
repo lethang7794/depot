@@ -32,6 +32,10 @@
 
     </td>
     <td class="quantity">&times</td>
-    <td class="title"><%= line_item.product.title %></td>
-    <td class="price"><%= number_to_currency(line_item.total_price) %></td>
+    <td class="title">
+      <%= line_item.product.try(:title) %>
+    </td>
+    <td class="price">
+      <%= number_to_currency(line_item.total_price) %>
+    </td>
   </tr>
