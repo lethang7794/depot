@@ -8,6 +8,7 @@ class OrdersTest < ApplicationSystemTestCase
   end
 
   test "visiting the index" do
+    login_as_user users(:one)
     visit orders_url
     assert_selector "h1", text: "Orders"
   end
@@ -96,6 +97,7 @@ class OrdersTest < ApplicationSystemTestCase
   end
 
   test "updating a Order" do
+    login_as_user users(:one)
     # TODO: pay_type
     visit orders_url
     click_on "Edit", match: :first
@@ -110,6 +112,7 @@ class OrdersTest < ApplicationSystemTestCase
   end
 
   test "destroying a Order" do
+    login_as_user users(:one)
     visit orders_url
     page.accept_confirm do
       click_on "Destroy", match: :first
