@@ -25,7 +25,7 @@
                 data: {confirm: 'Are you sure to delete this product?'},
                 class: "delete-line-item-button" %>
 
-      <%= form_with(model: line_item, method: :patch) do |form| %>
+      <%= form_with(model: line_item, url: line_item_path(line_item.id), method: :patch) do |form| %>
         <%= form.select(:quantity, [['1', 1], ['2', 2], ['3', 3], ['4', 4], ['5', 5], ['6', 6], ['7', 7], ['8', 8], ['9', 9], ['10', 10]]) %>
         <%= form.submit 'Update', class: "update-line-item-button" %>
       <% end %>
