@@ -7,11 +7,13 @@ class ProductsTest < ApplicationSystemTestCase
   end
 
   test "visiting the index" do
+    login_as_user users(:one)
     visit products_url
     assert_selector "h1", text: "Products"
   end
 
   test "creating a Product" do
+    login_as_user users(:one)
     visit products_url
     click_on "New Product"
 
@@ -26,6 +28,7 @@ class ProductsTest < ApplicationSystemTestCase
   end
 
   test "updating a Product" do
+    login_as_user users(:one)
     visit products_url
     click_on "Edit", match: :first
 
@@ -40,6 +43,7 @@ class ProductsTest < ApplicationSystemTestCase
   end
 
   test "destroying a Product" do
+    login_as_user users(:one)
     visit products_url
     page.accept_confirm do
       click_on "Destroy", match: :first
