@@ -46,13 +46,24 @@ en:
 
   carts:
     cart:
-      your_cart:      'This is your cart'
+      your_cart:      'Your cart'
       empty_cart:     'Empty cart'
       checkout:       "Check out"
 
   line_items:
     line_item:
       update: 'Update'
+
+  orders:
+    new:
+      new_order: "New Order"
+    form:
+      name:           "Name:"
+      email:          "Email:"
+      address:        "Address:"
+      payment_method: "Payment Method:"
+      prompt:         "Select a payment method"
+      submit:         "Place Order"
 
   number:
     currency:

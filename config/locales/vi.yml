@@ -21,6 +21,17 @@ vi:
     line_item:
       update: 'Cập nhật'
 
+  orders:
+    new:
+      new_order: "Đơn hàng mới"
+    form:
+      name:           "Tên:"
+      email:          "Thư điện tử:"
+      address:        "Địa chỉ:"
+      payment_method: "Phương thức thanh toán:"
+      prompt:         "Chọn phương thức thanh toán"
+      submit:         "Đặt hàng"
+
   number:
     currency:
       format:
