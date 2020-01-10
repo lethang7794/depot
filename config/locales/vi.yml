@@ -1,1 +1,14 @@
 vi:
+  layouts:
+    application:
+      home_html:         "Trang&nbsp;chủ"
+      questions_html:    'Hỏi đáp'
+      contact_html:      'Liên hệ'
+
+  store:
+    index:
+      title_html:  'Sản phẩm'
+
+  carts:
+    cart:
+      your_cart:      'Giỏ hàng'

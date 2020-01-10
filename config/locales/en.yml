@@ -31,8 +31,17 @@
 
 en:
   hello: "Hello world"
+
   layouts:
     application:
-      home:         'Home'
-      questions:    'Questions'
-      contact:      'Contact'
+      home_html:         'Home'
+      questions_html:    'Questions'
+      contact_html:      'Contact'
+
+  store:
+    index:
+      title_html: 'List to show to Buyer'
+
+  carts:
+    cart:
+      your_cart:      'This is your cart'
