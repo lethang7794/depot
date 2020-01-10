@@ -45,3 +45,11 @@ en:
   carts:
     cart:
       your_cart:      'This is your cart'
+
+  number:
+    currency:
+      format:
+        unit:       "$"
+        separator:  "."
+        delimiter:  ","
+        format:     "<sup>%u</sup>%n"

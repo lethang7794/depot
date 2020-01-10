@@ -12,3 +12,11 @@ vi:
   carts:
     cart:
       your_cart:      'Giỏ hàng'
+
+  number:
+    currency:
+      format:
+        unit:       "₫"
+        separator:  ","
+        delimiter:  "."
+        format:     "%n<sup>%u</sup>"
