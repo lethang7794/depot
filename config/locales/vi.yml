@@ -8,10 +8,18 @@ vi:
   store:
     index:
       title_html:  'Sản phẩm'
+      add_to_cart: 'Thêm vào giỏ hàng'
+      product_price_html: "%{price_whole}<small><sup>,%{price_fraction}</sup></small><sup>₫</sup>"
 
   carts:
     cart:
       your_cart:      'Giỏ hàng'
+      empty_cart:     'Làm trống'
+      checkout:       "Mua hàng"
+
+  line_items:
+    line_item:
+      update: 'Cập nhật'
 
   number:
     currency:

@@ -41,10 +41,18 @@ en:
   store:
     index:
       title_html: 'List to show to Buyer'
+      add_to_cart: 'Add to Cart'
+      product_price_html: "<sup>$</sup>%{price_whole}<small><sup>.%{price_fraction}</sup></small>"
 
   carts:
     cart:
       your_cart:      'This is your cart'
+      empty_cart:     'Empty cart'
+      checkout:       "Check out"
+
+  line_items:
+    line_item:
+      update: 'Update'
 
   number:
     currency:

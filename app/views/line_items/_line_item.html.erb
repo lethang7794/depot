@@ -27,7 +27,7 @@
 
       <%= form_with(model: line_item, url: line_item_path(line_item.id), method: :patch) do |form| %>
         <%= form.select(:quantity, [['1', 1], ['2', 2], ['3', 3], ['4', 4], ['5', 5], ['6', 6], ['7', 7], ['8', 8], ['9', 9], ['10', 10]]) %>
-        <%= form.submit 'Update', class: "update-line-item-button" %>
+        <%= form.submit t('.update'), class: "update-line-item-button" %>
       <% end %>
 
     </td>
