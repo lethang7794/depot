@@ -13,17 +13,17 @@
 
   <div class="field">
     <%= form.label :name, t('.name') %>
-    <%= form.text_field :name, placeholder: "Lê Quang Thắng", size: 40%>
+    <%= form.text_field :name, placeholder: t('.name_placeholder'), size: 40%>
   </div>
 
   <div class="field">
     <%= form.label :email, t('.email') %>
-    <%= form.text_field :email, placeholder: "thang@gmail.com", size: 40 %>
+    <%= form.text_field :email, placeholder: t('.email_placeholder'), size: 40 %>
   </div>
 
   <div class="field">
     <%= form.label :address, t('.address') %>
-    <%= form.text_area :address, placeholder: "02 Hải Triều, Phường Bến Nghé, Quận 1, Thành phố Hồ Chí Minh", rows: 3, cols: 40 %>
+    <%= form.text_area :address, placeholder: t('.address_placeholder'), rows: 3, cols: 40 %>
   </div>
 
   <div class="field">

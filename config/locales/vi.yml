@@ -28,6 +28,11 @@ vi:
       name:           "Tên:"
       email:          "Thư điện tử:"
       address:        "Địa chỉ:"
+
+      email_placeholder: "thang@gmail.com"
+      name_placeholder: "Lê Quang Thắng"
+      address_placeholder: "02 Hải Triều, Phường Bến Nghé, Quận 1, Thành phố Hồ Chí Minh"
+      
       payment_method: "Phương thức thanh toán:"
       prompt:         "Chọn phương thức thanh toán"
       submit:         "Đặt hàng"

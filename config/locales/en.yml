@@ -61,6 +61,11 @@ en:
       name:           "Name:"
       email:          "Email:"
       address:        "Address:"
+
+      email_placeholder: "barack.obama@gmail.com"
+      name_placeholder: "Barack Obama"
+      address_placeholder: "1600 Pennsylvania Avenue NW Washington, D.C. 20500, U.S."
+
       payment_method: "Payment Method:"
       prompt:         "Select a payment method"
       submit:         "Place Order"
