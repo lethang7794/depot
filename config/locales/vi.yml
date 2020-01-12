@@ -68,6 +68,16 @@ vi:
         blank: "không được để trống."
         inclusion: "không có trong danh sách."
 
+    models:
+      order: "Đơn hàng"
+
+    attributes:
+      order:
+        name: "Tên"
+        email: "Thư điện tử"
+        address: "Địa chỉ"
+        pay_type: "Phương thức thanh toán"
+
   errors:
     template:
       header:

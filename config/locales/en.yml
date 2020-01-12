@@ -95,6 +95,10 @@ en:
         delimiter:  ","
         format:     "<sup>%u</sup>%n"
 
+  activerecord:
+    models:
+      order: "Order"
+
   errors:
     template:
       header:
