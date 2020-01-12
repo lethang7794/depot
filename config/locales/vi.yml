@@ -32,7 +32,7 @@ vi:
       email_placeholder: "thang@gmail.com"
       name_placeholder: "Lê Quang Thắng"
       address_placeholder: "02 Hải Triều, Phường Bến Nghé, Quận 1, Thành phố Hồ Chí Minh"
-      
+
       payment_method: "Phương thức thanh toán:"
       prompt:         "Chọn phương thức thanh toán"
       submit:         "Đặt hàng"
@@ -61,3 +61,16 @@ vi:
         separator:  ","
         delimiter:  "."
         format:     "%n<sup>%u</sup>"
+
+  activerecord:
+    errors:
+      messages:
+        blank: "không được để trống."
+        inclusion: "không có trong danh sách."
+
+  errors:
+    template:
+      header:
+        one: "%{count} lỗi khi lưu %{model}:"
+        other: "%{count} lỗi khi lưu %{model}:"
+      body: "Có lỗi với các trường thông tin sau:"
