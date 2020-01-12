@@ -54,6 +54,7 @@ vi:
         routing_number: "Số định danh"
         accouting_number: "Số tài khoản"
 
+    thanks: 'Đơn hàng đã được đặt thành công.'
   number:
     currency:
       format:

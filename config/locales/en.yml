@@ -87,6 +87,8 @@ en:
         routing_number: "Routing Number"
         accouting_number: "Accounting Number"
 
+    thanks: 'Order was successfully created - Thank you for your order, we will ship it ASAP.'
+
   number:
     currency:
       format:

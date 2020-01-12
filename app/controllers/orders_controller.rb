@@ -36,7 +36,7 @@ class OrdersController < ApplicationController
         Cart.destroy(session[:cart_id])
         session[:cart_id] = nil
 
-        format.html { redirect_to store_index_path, notice: 'Order was successfully created - Thank you for your order, we will ship it ASAP.' }
+        format.html { redirect_to store_index_path(locale: I18n.locale), notice: t('.thanks') }
         format.json { render :show, status: :created, location: @order }
 
         # OrderMailer.received(@order).deliver_later
