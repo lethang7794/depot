@@ -25,7 +25,7 @@ class LineItemsControllerTest < ActionDispatch::IntegrationTest
 
     follow_redirect!
 
-    assert_select 'h2', 'This is your cart'
+    assert_select 'h2', I18n.t('carts.cart.your_cart')
     assert_select 'td', "Programming Ruby 1.9"
   end
 

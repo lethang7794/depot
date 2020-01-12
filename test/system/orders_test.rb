@@ -26,7 +26,7 @@ class OrdersTest < ApplicationSystemTestCase
     select 'Cash', from: "order_pay_type"
     assert_selector "select#order_pay_type", text: "Cash"
 
-    click_on "Create Order"
+    click_on I18n.t('orders.form.submit')
     assert_text "Order was successfully created - Thank you for your order, we will ship it ASAP."
   end
 
@@ -52,7 +52,7 @@ class OrdersTest < ApplicationSystemTestCase
     fill_in "order_expiration_date", with: "12/20"
 
     perform_enqueued_jobs do
-      click_on "Create Order"
+      click_on I18n.t('orders.form.submit')
     end
 
     assert_text "Order was successfully created - Thank you for your order, we will ship it ASAP."
@@ -105,7 +105,7 @@ class OrdersTest < ApplicationSystemTestCase
     fill_in "Address", with: @order.address
     fill_in "Email", with: @order.email
     fill_in "Name", with: @order.name
-    click_on "Update Order"
+    click_on I18n.t('orders.form.submit')
 
     assert_text "Order was successfully updated"
     click_on "Back"

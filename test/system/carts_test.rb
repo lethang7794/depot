@@ -33,7 +33,7 @@ class CartsTest < ApplicationSystemTestCase
     visit store_index_url
     click_on "Add to Cart", match: :first
     page.accept_confirm do
-      click_on "Delete this cart - Empty cart"
+      click_on I18n.t('carts.cart.empty_cart')
     end
     page.has_css?('side_cart_first_empty', style: "display: none;")
   end
