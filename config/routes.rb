@@ -8,6 +8,10 @@ Rails.application.routes.draw do
 
   resources :users
 
+  resources :products do
+    get :who_bought, on: :member
+  end
+
   scope '(:locale)' do
     resources :orders
     resources :line_items
@@ -16,8 +20,5 @@ Rails.application.routes.draw do
     root 'store#index', as: 'store_index'
   end
 
-  resources :products do
-    get :who_bought, on: :member
-  end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
