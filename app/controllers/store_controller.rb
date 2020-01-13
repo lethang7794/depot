@@ -9,7 +9,11 @@ class StoreController < ApplicationController
 
     @time = Time.now
 
-    @products = Product.order(:title)
-    # @products = Product.order(price: :desc)
+    if params[:set_locale]
+      redirect_to store_index_url(locale: params[:set_locale])
+    else
+      @products = Product.order(:title)
+      # @products = Product.order(price: :desc)
+    end
   end
 end
