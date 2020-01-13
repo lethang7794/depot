@@ -65,6 +65,23 @@ en:
       prompt:         "Select a payment method"
       submit:         "Place Order"
 
+      pay_type: "Payment Method:"
+      pay_type_prompt: "Select a payment method"
+      pay_types:
+        credit_card: "Credit Card / Debit Card"
+        check: "Check"
+        cash: "Cash"
+
+      credit_card_pay_type:
+        cardholder_name: "Cardholder Name"
+        card_number: "Credit/Debit Card Number"
+        expiration_date: "Expiration Date"
+        cvv: "CVV"
+
+      check_pay_type:
+        routing_number: "Routing Number"
+        accouting_number: "Accounting Number"
+
   number:
     currency:
       format:

@@ -32,6 +32,23 @@ vi:
       prompt:         "Chọn phương thức thanh toán"
       submit:         "Đặt hàng"
 
+      pay_type: "Phương thức thanh toán"
+      pay_type_prompt: "Chọn phương thức thanh toán"
+      pay_types:
+        credit_card: "Thẻ tín dụng/ghi nợ"
+        check: "Séc"
+        cash: "Tiền mặt khi nhận hàng"
+
+      credit_card_pay_type:
+        cardholder_name: "Tên chủ thẻ"
+        card_number: "Số thẻ"
+        expiration_date: "Ngày hết hạn"
+        cvv: "Số CVV"
+
+      check_pay_type:
+        routing_number: "Số định danh"
+        accouting_number: "Số tài khoản"
+
   number:
     currency:
       format:
