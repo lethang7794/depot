@@ -20,6 +20,6 @@ module Depot
     # the framework and any gems in your application.
 
     # Auto-generate JS translation from those in /config/locale
-    config.middleware.use I18n::JS::Middleware
+    # config.middleware.use I18n::JS::Middleware
   end
 end
