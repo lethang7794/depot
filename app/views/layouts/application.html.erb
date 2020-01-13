@@ -16,6 +16,11 @@
 
   <body>
     <header class="banner">
+      <%= form_tag store_index_path do %>
+        <%= select_tag 'set_locale',
+                        options_for_select([['English', 'en'], ['Tiếng Việt', 'vi']], I18n.locale.to_s) %>
+        <%= submit_tag 'Submit' %>
+      <% end %>
       <a href="/">
         <%= image_tag 'online_store.svg', alt: 'The store logo'  %>
       </a>
