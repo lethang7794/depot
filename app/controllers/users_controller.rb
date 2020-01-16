@@ -41,12 +41,16 @@ class UsersController < ApplicationController
   # PATCH/PUT /users/1.json
   def update
     respond_to do |format|
-      if @user.update(user_params)
-        format.html { redirect_to users_url, notice: "User '#{@user.name}' was successfully updated." }
-        format.json { render :show, status: :ok, location: @user }
+      if @user.try(:authenticate, params[:user][:old_password])
+        if @user.update(user_params)
+          format.html { redirect_to users_url, notice: "User '#{@user.name}' was successfully updated." }
+          format.json { render :show, status: :ok, location: @user }
+        else
+          format.html { render :edit }
+          format.json { render json: @user.errors, status: :unprocessable_entity }
+        end
       else
-        format.html { render :edit }
-        format.json { render json: @user.errors, status: :unprocessable_entity }
+        format.html { redirect_to edit_user_url, notice: "Old password is wrong." }
       end
     end
   end
@@ -59,6 +63,10 @@ class UsersController < ApplicationController
       format.html { redirect_to users_url, notice: 'User was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  rescue_from 'User::Error' do |exception|
+    redirect_to users_url, notice: exception.message
   end
 
   private

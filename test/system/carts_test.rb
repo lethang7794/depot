@@ -6,26 +6,25 @@ class CartsTest < ApplicationSystemTestCase
   end
 
   test "visiting the index" do
+    login_as_user users(:one)
     visit carts_url
     assert_selector "h1", text: "Carts"
   end
 
   test "creating a Cart" do
+    login_as_user users(:one)
     visit carts_url
     click_on "New Cart"
-
     click_on "Create Cart"
-
     assert_text "Cart was successfully created"
     click_on "Back"
   end
 
   test "updating a Cart" do
+    login_as_user users(:one)
     visit carts_url
     click_on "Edit", match: :first
-
     click_on "Update Cart"
-
     assert_text "Cart was successfully updated"
     click_on "Back"
   end

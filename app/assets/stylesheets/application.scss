@@ -50,33 +50,32 @@ section.content {
 
   nav.side_bar {
     text-align: center;
-
     @media (min-width: 600px) {
       text-align: right;
     }
 
+    padding: 0.354em;
     background-color: #428bca;
+
     ul {
-      padding: 0.5em;
       margin: 0;
       list-style: none;
+      list-style-position: inside;
+
       li {
         color: white;
-        text-transform: uppercase;
+        text-transform: capitalize;
 
-        a:link {
-          color: white;
-        }
-
-        a:hover {
-          background-color: yellow;
-          color: black;
-        }
-
-        a:visited {
+        a, a:visited {
           color: inherit;
         }
-
+        a {
+          text-decoration: none;
+        }
+        a:hover {
+          background-color: inherit;
+          color: hsla(0, 0%, 100%, .5);
+        }
 
       }
     }
@@ -86,6 +85,28 @@ section.content {
     padding: 0.5em;
   }
 }
+
+nav.logged-in-nav-bar {
+  border-top: solid thin white;
+  margin-top: 0.354em;
+
+  // match button style with anchor style
+  input[type="submit"] {
+    background: none;
+    border: none;
+    color: white;
+    text-transform: capitalize;
+    margin: 0;
+    padding: 0;
+  }
+  input[type="submit"]:hover {
+    color: hsla(0, 0%, 100%, .5);
+  }
+  input[type="submit"]:focus {
+    border: none;
+  }
+}
+
 //
 // input[type="submit"] {
 //   background-color: #282;

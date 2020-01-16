@@ -6,6 +6,8 @@ class LineItemsTest < ApplicationSystemTestCase
   end
 
   test "visiting the index" do
+    login_as_user users(:one)
+
     visit line_items_url
     assert_selector "h1", text: "Line Items"
   end
@@ -19,6 +21,8 @@ class LineItemsTest < ApplicationSystemTestCase
   end
 
   test "updating a Line item" do
+    login_as_user users(:one)
+
     visit line_items_url
     click_on "Edit", match: :first
 
@@ -31,6 +35,8 @@ class LineItemsTest < ApplicationSystemTestCase
   end
 
   test "destroying a Line item" do
+    login_as_user users(:one)
+
     visit line_items_url
     page.accept_confirm do
       click_on "Destroy", match: :first
