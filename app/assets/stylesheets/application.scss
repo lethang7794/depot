@@ -175,6 +175,11 @@ nav.logged-in-nav-bar {
   display: none;
 }
 
+aside.locale_switcher {
+  float: right;
+  margin: 1em;
+}
+
 .depot_form {
   input[type="submit"] {
     background-color: #1074e7;

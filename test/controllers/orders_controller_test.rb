@@ -22,7 +22,7 @@ class OrdersControllerTest < ActionDispatch::IntegrationTest
       post orders_url, params: { order: { address: @order.address, email: @order.email, name: @order.name, pay_type: @order.pay_type } }
     end
 
-    assert_redirected_to store_index_path
+    assert_redirected_to store_index_path(locale: I18n.locale)
     assert flash[:notice], 'Order was successfully created - Thank you for your order, we will ship it ASAP.'
   end
 

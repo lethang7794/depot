@@ -31,3 +31,79 @@
 
 en:
   hello: "Hello world"
+
+  layouts:
+    application:
+      home_html:         'Home'
+      questions_html:    'Questions'
+      contact_html:      'Contact'
+
+  store:
+    index:
+      title_html: 'List to show to Buyer'
+      add_to_cart: 'Add to Cart'
+      product_price_html: "<sup>$</sup>%{price_whole}<small><sup>.%{price_fraction}</sup></small>"
+
+  carts:
+    cart:
+      your_cart:      'Your cart'
+      empty_cart:     'Empty cart'
+      checkout:       "Check out"
+
+  line_items:
+    line_item:
+      update: 'Update'
+
+  orders:
+    new:
+      new_order: "New Order"
+    form:
+      name:           "Name:"
+      email:          "Email:"
+      address:        "Address:"
+
+      email_placeholder: "barack.obama@gmail.com"
+      name_placeholder: "Barack Obama"
+      address_placeholder: "1600 Pennsylvania Avenue NW Washington, D.C. 20500, U.S."
+
+      payment_method: "Payment Method:"
+      prompt:         "Select a payment method"
+      submit:         "Place Order"
+
+      pay_type: "Payment Method:"
+      pay_type_prompt: "Select a payment method"
+      pay_types:
+        credit_card: "Credit Card / Debit Card"
+        check: "Check"
+        cash: "Cash"
+
+      credit_card_pay_type:
+        cardholder_name: "Cardholder Name"
+        card_number: "Credit/Debit Card Number"
+        expiration_date: "Expiration Date"
+        cvv: "CVV"
+
+      check_pay_type:
+        routing_number: "Routing Number"
+        accouting_number: "Accounting Number"
+
+    thanks: 'Order was successfully created - Thank you for your order, we will ship it ASAP.'
+
+  number:
+    currency:
+      format:
+        unit:       "$"
+        separator:  "."
+        delimiter:  ","
+        format:     "<sup>%u</sup>%n"
+
+  activerecord:
+    models:
+      order: "Order"
+
+  errors:
+    template:
+      header:
+        one: "%{count} error prohibited this %{model} from being saved:"
+        other: "%{count} errors prohibited this %{model} from being saved:"
+      body: "There are prolems with the following fields:"

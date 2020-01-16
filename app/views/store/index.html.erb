@@ -12,23 +12,23 @@
   <% end %>
 <% end %>
 
-<h1>List to show to Buyer</h1>
+<h1><%= t('.title_html') %></h1>
 
 <ul class="catalog">
   <% cache @products do %>
     <% @products.each do |product| %>
       <% cache product do %>
         <li>
-          <%= form_with url: line_items_path(product_id: product), method: :post, class: "", remote: true %>
+          <%= form_with url: line_items_path(product_id: product, locale: I18n.locale), method: :post, class: "", remote: true do %>
             <%= button_tag image_tag(product.image_url), { style: "float: left;" }%>
-
+          <% end %>
           <h2><%= product.title %></h2>
           <p>
             <%= sanitize(product.description) %>
           </p>
           <div class="price">
-            <%= number_to_currency(product.price) %>
-            <%= button_to 'Add to Cart', line_items_path(product_id: product), remote: true %>
+            <%= t '.product_price_html', price_whole: product.price_whole, price_fraction: product.price_fraction %>
+            <%= button_to( t('.add_to_cart'), line_items_path(product_id: product, locale: I18n.locale), remote: true) %>
           </div>
         </li>
       <% end %>

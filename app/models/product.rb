@@ -13,6 +13,14 @@ class Product < ApplicationRecord
     message: "Only support jpg, png, gif."
   }
 
+  def price_whole
+    self.price.floor
+  end
+
+  def price_fraction
+    "%02d" %((self.price - self.price.floor)*100).to_i
+  end
+
   private
     def ensure_not_referenced_by_any_line_item
       unless line_items.empty?

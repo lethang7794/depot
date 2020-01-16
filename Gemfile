@@ -30,6 +30,9 @@ gem 'bcrypt', '~> 3.1.7'
 # Add Webpacker
 gem 'webpacker'
 
+# Add i18n-js to make translation available to React
+gem 'i18n-js'
+
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 

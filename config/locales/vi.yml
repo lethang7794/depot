@@ -1,0 +1,87 @@
+vi:
+  layouts:
+    application:
+      home_html:         "Trang&nbsp;chủ"
+      questions_html:    'Hỏi đáp'
+      contact_html:      'Liên hệ'
+
+  store:
+    index:
+      title_html:  'Sản phẩm'
+      add_to_cart: 'Thêm vào giỏ hàng'
+      product_price_html: "%{price_whole}<small><sup>,%{price_fraction}</sup></small><sup>₫</sup>"
+
+  carts:
+    cart:
+      your_cart:      'Giỏ hàng'
+      empty_cart:     'Làm trống'
+      checkout:       "Mua hàng"
+
+  line_items:
+    line_item:
+      update: 'Cập nhật'
+
+  orders:
+    new:
+      new_order: "Đơn hàng mới"
+    form:
+      name:           "Tên:"
+      email:          "Thư điện tử:"
+      address:        "Địa chỉ:"
+
+      email_placeholder: "thang@gmail.com"
+      name_placeholder: "Lê Quang Thắng"
+      address_placeholder: "02 Hải Triều, Phường Bến Nghé, Quận 1, Thành phố Hồ Chí Minh"
+
+      payment_method: "Phương thức thanh toán:"
+      prompt:         "Chọn phương thức thanh toán"
+      submit:         "Đặt hàng"
+
+      pay_type: "Phương thức thanh toán"
+      pay_type_prompt: "Chọn phương thức thanh toán"
+      pay_types:
+        credit_card: "Thẻ tín dụng/ghi nợ"
+        check: "Séc"
+        cash: "Tiền mặt khi nhận hàng"
+
+      credit_card_pay_type:
+        cardholder_name: "Tên chủ thẻ"
+        card_number: "Số thẻ"
+        expiration_date: "Ngày hết hạn"
+        cvv: "Số CVV"
+
+      check_pay_type:
+        routing_number: "Số định danh"
+        accouting_number: "Số tài khoản"
+
+    thanks: 'Đơn hàng đã được đặt thành công.'
+  number:
+    currency:
+      format:
+        unit:       "₫"
+        separator:  ","
+        delimiter:  "."
+        format:     "%n<sup>%u</sup>"
+
+  activerecord:
+    errors:
+      messages:
+        blank: "không được để trống."
+        inclusion: "không có trong danh sách."
+
+    models:
+      order: "Đơn hàng"
+
+    attributes:
+      order:
+        name: "Tên"
+        email: "Thư điện tử"
+        address: "Địa chỉ"
+        pay_type: "Phương thức thanh toán"
+
+  errors:
+    template:
+      header:
+        one: "%{count} lỗi khi lưu %{model}:"
+        other: "%{count} lỗi khi lưu %{model}:"
+      body: "Có lỗi với các trường thông tin sau:"
