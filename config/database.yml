@@ -19,13 +19,3 @@ development:
 test:
   <<: *default
   database: db/test.sqlite3
-
-production:
-  adapter: mysql2
-  encoding: utf8
-  reconnect: false
-  database: depot_production
-  pool: 5
-  username: lqt
-  password: thang12345
-  host: localhost
