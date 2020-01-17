@@ -53,6 +53,8 @@ en:
   line_items:
     line_item:
       update: 'Update'
+      delete_line_item: 'Delete'
+      delete_line_item_confirm: 'Are you sure to delete this product?'
 
   orders:
     new:

@@ -20,6 +20,8 @@ vi:
   line_items:
     line_item:
       update: 'Cập nhật'
+      delete_line_item: 'Xóa'
+      delete_line_item_confirm: 'Bạn chắc chắn muốn bỏ sản phẩm này?'
 
   orders:
     new:
