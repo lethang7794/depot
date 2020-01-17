@@ -3,15 +3,16 @@
 <% else %>
   <tr>
 <% end %>
-    <td class="quantity" id="line_item_quantity"><%= line_item.quantity %></td>
+    <td class="quantity" id="line_item_quantity"></td>
     <td>
       <center>
-
         <%= button_to '+', line_item_path(line_item.id),
                 method: :patch,
                 remote: true,
                 params: {'line_item[quantity]'=> [(line_item.quantity + 1), 10].min } %>
-
+      <div class="">
+          <%= line_item.quantity %>
+      </div>
         <%= button_to '-', line_item_path(line_item.id),
                 method: :patch,
                 remote: true,
@@ -19,16 +20,6 @@
       </center>
     </td>
     <td class="quantity">
-      <%= button_to 'X', line_item,
-                method: :delete,
-                remote: true,
-                data: {confirm: 'Are you sure to delete this product?'},
-                class: "delete-line-item-button" %>
-
-      <%= form_with(model: line_item, url: line_item_path(line_item.id), method: :patch) do |form| %>
-        <%= form.select(:quantity, [['1', 1], ['2', 2], ['3', 3], ['4', 4], ['5', 5], ['6', 6], ['7', 7], ['8', 8], ['9', 9], ['10', 10]]) %>
-        <%= form.submit t('.update'), class: "update-line-item-button" %>
-      <% end %>
 
     </td>
     <td class="quantity">&times</td>
@@ -37,5 +28,12 @@
     </td>
     <td class="price">
       <%= number_to_currency(line_item.total_price) %>
+    </td>
+    <td>
+      <%= button_to t('.delete_line_item'), line_item,
+                method: :delete,
+                remote: true,
+                data: {confirm: t('.delete_line_item_confirm')},
+                class: "delete-line-item-button" %>
     </td>
   </tr>
