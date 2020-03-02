@@ -3,32 +3,42 @@
 <% else %>
   <tr>
 <% end %>
-    <td class="quantity" id="line_item_quantity"></td>
     <td>
-      <center>
-        <%= button_to '+', line_item_path(line_item.id),
-                method: :patch,
-                remote: true,
-                params: {'line_item[quantity]'=> [(line_item.quantity + 1), 10].min } %>
-      <div class="">
-          <%= line_item.quantity %>
-      </div>
-        <%= button_to '-', line_item_path(line_item.id),
-                method: :patch,
-                remote: true,
-                params: {'line_item[quantity]'=> [(line_item.quantity - 1), 1].max } %>
-      </center>
+      <%= image_tag(line_item.product.image_url)%>
     </td>
-    <td class="quantity">
 
-    </td>
-    <td class="quantity">&times</td>
     <td class="title">
       <%= line_item.product.try(:title) %>
     </td>
+
+    <td class="title">
+      <%= number_to_currency(line_item.product.try(:price)) %>
+    </td>
+
+    <td>
+      <div class="input_quantity">
+        <%= button_to '+', line_item_path(line_item.id),
+                method: :patch,
+                remote: true,
+                class: "quantity_button",
+                params: {'line_item[quantity]'=> [(line_item.quantity + 1), 10].min,} %>
+
+        <div class="input_quantity_value">
+            <%= line_item.quantity %>
+        </div>
+
+        <%= button_to '-', line_item_path(line_item.id),
+                method: :patch,
+                remote: true,
+                class: "quantity_button",
+                params: {'line_item[quantity]'=> [(line_item.quantity - 1), 1].max } %>
+      </div>
+    </td>
+
     <td class="price">
       <%= number_to_currency(line_item.total_price) %>
     </td>
+
     <td>
       <%= button_to t('.delete_line_item'), line_item,
                 method: :delete,
