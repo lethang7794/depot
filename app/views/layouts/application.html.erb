@@ -24,12 +24,31 @@
           <%= submit_tag 'Submit', id: 'submit_locale_change' %>
         <% end %>
       </aside>
-      
-      <a href="/">
-        <%= image_tag 'online_store.svg', alt: 'The store logo'  %>
-      </a>
+
+      <%= link_to image_tag('online_store.svg', alt: 'The store logo'), store_index_path %>
+
       <h1>This Is The Store Name</h1>
       <h1><%= @page_title %></h1>
+
+      <div class="wrapper">
+        <ul>
+          <li><%= link_to t('.home_html'), store_index_path %></li>
+          <li><%= link_to t('.questions_html'), store_index_path %></li>
+          <li><%= link_to t('.contact_html'), store_index_path %></li>
+        </ul>
+
+        <% if session[:user_id] %>
+          <nav class="logged-in-nav-bar">
+            <ul>
+              <li><%= link_to 'Orders', orders_path %></li>
+              <li><%= link_to 'Users', users_path %></li>
+              <li><%= link_to 'Products', products_path %></li>
+              <li><%= link_to "Line Items", line_items_path %></li>
+              <li><%= button_to 'SIGN OUT', logout_path, method: :delete %></li>
+            </ul>
+          </nav>
+        <% end %>
+      </div>
     </header>
 
     <section class="content">
@@ -43,24 +62,6 @@
           <div class="carts" id="side_cart_first_empty">
             <%= render_if @cart && @cart.line_items.any?, @cart %>
           </div>
-        <% end %>
-
-        <ul>
-          <li><a href="/"><%= t('.home_html') %></a></li>
-          <li><a href="/"><%= t '.questions_html' %></a></li>
-          <li><a href="/"><%= t '.contact_html' %></a></li>
-        </ul>
-
-        <% if session[:user_id] %>
-          <nav class="logged-in-nav-bar">
-            <ul>
-              <li><%= link_to 'Orders', orders_path %></li>
-              <li><%= link_to 'Users', users_path %></li>
-              <li><%= link_to 'Products', products_path %></li>
-              <li><%= link_to "Line Items", line_items_path %></li>
-              <li><%= button_to 'Logout', logout_path, method: :delete %></li>
-            </ul>
-          </nav>
         <% end %>
 
         <div id="test-time">
