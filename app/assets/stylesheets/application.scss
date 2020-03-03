@@ -27,6 +27,7 @@ body {
 header {
   text-align: center;
   background-color: #85C1E9;
+  padding: 1.5em 0;
   // margin: 0;
   h1 {
     display: none;
@@ -35,50 +36,62 @@ header {
   img {
     width: 10em;
   }
+
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    margin-top: 1.5em;
+    font-size: 1.25em;
+    // margin: 0;
+    // list-style: none;
+    // list-style-position: inside;
+
+    li {
+      color: white;
+      background-color: #2276c0 ;
+      text-transform: uppercase;
+      padding: 15px 0;
+      border: solid 1px #620c04;
+
+      a, a:visited {
+        color: inherit;
+      }
+      a {
+        text-decoration: none;
+      }
+      a:hover {
+        background-color: inherit;
+        color: hsla(0, 0%, 100%, .5);
+      }
+    }
+
+    input {
+      font-size: 16.25px;
+    }
+  }
 }
 
-
 section.content {
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
+  max-width: 640px;
+  min-width: 480px;
 
   display: flex;
   flex-direction: column;
-  @media (min-width: 600px) {
-    flex-direction: row;
-  }
+  // @media (min-width: 600px) {
+  //   flex-direction: row;
+  // }
 
   nav.side_bar {
     text-align: center;
-    @media (min-width: 600px) {
-      text-align: right;
-    }
+    // @media (min-width: 600px) {
+    //   text-align: right;
+    // }
 
     padding: 0.354em;
     background-color: #428bca;
-
-    ul {
-      margin: 0;
-      list-style: none;
-      list-style-position: inside;
-
-      li {
-        color: white;
-        text-transform: capitalize;
-
-        a, a:visited {
-          color: inherit;
-        }
-        a {
-          text-decoration: none;
-        }
-        a:hover {
-          background-color: inherit;
-          color: hsla(0, 0%, 100%, .5);
-        }
-
-      }
-    }
   }
 
   main {
@@ -87,7 +100,6 @@ section.content {
 }
 
 nav.logged-in-nav-bar {
-  border-top: solid thin white;
   margin-top: 0.354em;
 
   // match button style with anchor style
@@ -193,4 +205,9 @@ aside.locale_switcher {
   input[type="submit"]:hover {
     background-color: #0366d6;
   }
+}
+
+.wrapper {
+  padding: 0 1em;
+  margin: 0 auto;
 }
