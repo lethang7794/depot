@@ -107,20 +107,6 @@ nav.logged-in-nav-bar {
   }
 }
 
-//
-// input[type="submit"] {
-//   background-color: #282;
-//   color: white;
-//   border: solid thin #141;
-//   border-radius: 0.354em;
-//   padding: 0.354em 1em;
-//
-// }
-//
-// input[type="submit"]:hover {
-//   background-color: #141;
-// }
-
 #test-time {
   display: none;
 }
@@ -144,7 +130,24 @@ nav.logged-in-nav-bar {
   margin: 0.5em;
   padding: 1em;
 
-  input[type="submit"].delete-line-item-button,
+  input[type="submit"]:hover {
+    cursor: pointer;
+  }
+
+  input[type="submit"].delete-line-item-button {
+    background-color: white;
+    background: transparent;
+    border: none;
+    color: gray;
+    // color: white;
+    // border: solid thin #141;
+    // border-radius: 0.354em;
+    // padding: 0.354em 1em;
+  }
+  input[type="submit"]:hover.delete-line-item-button {
+    color: black;
+  }
+
   input[type="submit"].delete_button {
     background-color: red;
     color: white;
@@ -152,7 +155,6 @@ nav.logged-in-nav-bar {
     border-radius: 0.354em;
     padding: 0.354em 1em;
   }
-  input[type="submit"]:hover.delete-line-item-button,
   input[type="submit"]:hover.delete_button {
     background-color: #AF0000
   }
